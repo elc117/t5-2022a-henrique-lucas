@@ -28,6 +28,50 @@ enter - Dispara contra os dragões.
 
 No [link](https://editor.p5js.org/henriquefochesatto/sketches/vP6g8Jmpe) esta disponível o código do jogo.
 
+# Orientação a Objetos
+
+Visando contemplar os conceitos de orientação a objetos, o presente trabalho visou delegar atributos e métodos específicos para o funcionamento deste jogo à suas respectivas classes. Como exemplo disto é possível verificar que o jogo é composto por 3 elementos que desempenham funções especificas no jogo, sendo eles: Inimigo, Jogador e Tiro.
+Cada um destes elementos foram referenciados nas seguintes classes:
+
+Class Jogado(): Esta classe tem em seu construtor implementado a posição do personagem na tela e o atributo vida e pontos.
+
+```
+class Jogador {
+  constructor() {
+    this.x = 10;
+    this.y = 200;
+    this.vida = 4;
+    this.pontos = 0;
+  }
+}
+```
+
+Class Tiro: Esta classe implementa em seu método a funcionalidade tiro que utiliza a posição do personagem no momento em que foi pressionado a tecla para executar esta ação e um fator de velocidade para o deslocamento horizontal do tiro.
+
+```
+class Tiro {
+  constructor() {
+    this.posx = player.x + 50 + velTiro;
+    this.posy = player.y + 50;
+    this.tamx = 50;
+    this.tamy = 50;
+  }
+```
+
+Class Inimigo(): Esta classe apresenta como atributos a posição e tamanho do inimigo a ser desenhado na tela. E como método a variação de forma aleatória da posição vertical onde o inimigo será inicializado e a velocidade com que o inimigo irá se deslocar na tela.
+
+```
+class Inimigo {
+  constructor() {
+    this.inix = width + 50;
+    this.iniy = random(50, height - 50);
+    this.tamix = 30;
+    this.veli = 2 + random(0, 4);
+    this.tamd = 100
+  }
+```
+
+
 # Execução local
 
 Também é possível executar o jogo localmente. Para isso no link referente ao código do jogo, basta ir em File>Download e baixar o arquivo .zip que contém todos os elementos web necessários para executar o jogo.
